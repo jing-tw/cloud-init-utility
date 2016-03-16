@@ -1,0 +1,22 @@
+#cloud-config
+
+apt_update: true
+#package_upgrade: true
+#package_reboot_if_required: true
+
+packages:
+  - git
+  - ntp
+
+hostname: puppet-master
+
+bootcmd:
+  - echo 127.0.1.1 puppet-master >> /etc/hosts
+  - ntpdate pool.ntp.org
+  - cd /tmp;
+  - wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+  - dpkg -i puppetlabs-release-trusty.deb
+  - apt-get update
+  - apt-get -y install puppetmaster
+
+final_message: "The system is finally up, after $UPTIME seconds"
