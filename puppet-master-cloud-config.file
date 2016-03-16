@@ -1,6 +1,6 @@
 #cloud-config
 #Usage:
-# nova boot --image "ubuntu_cloud"  --key-name jing-key --flavor "m1.small" --availability-zone "node10" --user-data user_data.file "puppet-master-cloud-config.file" --nic net-id=fc48a1d5-62e9-459f-89ab-86f4c0bf6486
+# nova boot --image "ubuntu_cloud"  --key-name jing-key --flavor "m1.small" --availability-zone "node10" --user-data "puppet-master-cloud-config.file" jing-puppet-master --nic net-id=fc48a1d5-62e9-459f-89ab-86f4c0bf6486
 
 apt_update: true
 #package_upgrade: true
